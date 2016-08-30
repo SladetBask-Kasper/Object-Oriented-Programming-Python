@@ -56,7 +56,7 @@ def sockSend(ip = "ERR", port = 80, proto = "TCP", msg = "|", socket = None):
 		if proto == "UDP":
 			try:
 				socket.sendto(data, (ip, int(port)))
-			except socket.error:
+			except:
 				#print("Error Sending Packet... You have No Internet... Socket Closed!")
 				#socket.close()
 				return False
@@ -85,8 +85,8 @@ def connectTo(ip = "ERR", port = 80, socket = None):
 		#print("Need an ip")
 		return False
 	try:
-		s.connect((ip, port))
-	except socket.gaierror:
+		socket.connect((ip, port))
+	except:
 		#print("ERROR CONNECTING TO TARGET")
 		return False
 	return True
@@ -105,15 +105,6 @@ def sockets(proto = None):
 		return TCP
 def system(arg):
 	os.system(arg)
-def sell(price = 100, money = 200):
-	if price < money:
-		return False
-	elif price >= money:
-		result = money - price
-		return result
-	else:
-		return False
-
 def author(name):
 	global author
 	author = name
