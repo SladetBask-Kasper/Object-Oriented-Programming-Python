@@ -103,15 +103,6 @@ def sockets(proto = None):
 		return UDP
 	elif proto == "TCP":
 		return TCP
-def winsock(init = "Initialize"):
-	if init == "Initialize":
-		winsockz = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-		return winsockz
-	elif init == "initialize":
-		winsockz = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-		return winsockz
-	else:
-		return False
 def system(arg):
 	os.system(arg)
 def sell(price = 100, money = 200):
